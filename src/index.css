@@ -1,13 +1,109 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 62.5%;
+  box-sizing: border-box;
+  position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main-con {
+  height: 100vh;
+}
+
+.menu-icon{
+  font-size: 2rem;
+  position: absolute;
+  top: 1rem;
+  left: 2rem;
+  color: rgb(21, 159, 213);
+  animation-name: menuIcon;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+nav {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  /* display: none; */
+  background-color: red;
+}
+
+.modal {
+  width: 40%;
+  padding: 2rem;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.modal-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0.5rem 0.7rem;
+  background-color: black;
+  color: white;
+  border: 1px solid black;
+  border-radius: 3px;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+
+.modal-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+.overlay {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(1px);
+  display: none;
+}
+
+.modal-cancel {
+  font-size: 1.3rem;
+  color: red;
+  margin-left: 95%;
+  cursor: pointer;
+}
+
+.modal-text {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 100;
+  text-align: justify;
+}
+
+@keyframes menuIcon {
+0%{
+  transform: scale(1);
+}  
+
+50%{
+  transform: scale(1.5);
+}
+
+100%{
+  transform: scale(1);
+
+}
 }
